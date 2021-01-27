@@ -13,13 +13,11 @@ int binarySearch(int a[], int l, int r, int item)
             count++;
             return mid + 1;
         }
-
         else if (item < a[mid])
         {
             count++;
             r = mid - 1;
         }
-
         else
         {
             count++;
@@ -52,7 +50,6 @@ void main()
     }
     else
     {
-        printf("\n======================\nlocation of item = %d\ncount=%d\n======================", loc,count);
-
+        printf("\n======================\nlocation of item = %d\ncount=%d\n======================", loc, count);
     }
-}    
+}

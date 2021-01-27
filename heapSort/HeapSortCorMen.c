@@ -1,6 +1,6 @@
 #include <stdio.h>
 int n; //?n:size of array
-int heapSize,count;
+int heapSize, count;
 void swap(int *a, int *b)
 {
     int temp;
@@ -16,22 +16,24 @@ void maxHeapify(int a[], int i)
 {
     int l, r, largest; //left child : l and right child : r
     count++;
-    l = 2 * i;         //left child
+    l = 2 * i; //left child
     count++;
-    r = (2 * i) + 1;     //right child
+    r = (2 * i) + 1; //right child
     count++;
 
-    if (l <= heapSize && a[l] > a[i]){
+    if (l <= heapSize && a[l] > a[i])
+    {
         largest = l; //left child is greater then store its index into largest
         count++;
-        
     }
-    else{
+    else
+    {
 
         largest = i; //left child is not greater than largest value considered to itself
         count++;
     }
-    if (r <= heapSize && a[r] > a[largest]){
+    if (r <= heapSize && a[r] > a[largest])
+    {
 
         largest = r; //right child is greater then store its index into largest
         count++;
@@ -58,12 +60,12 @@ void heapSort(int a[])
 {
     buildMaxHeap(a);
     count++;
-    for (int i = n; i >= 2; i--)//down to top
+    for (int i = n; i >= 2; i--) //down to top
     {
         swap(&a[1], &a[i]);
         count++;
         heapSize = heapSize - 1;
-        maxHeapify(a, 1);   //!maxheapify start from first index & going to leaf element's index
+        maxHeapify(a, 1); //!maxheapify start from first index & going to leaf element's index
         count++;
     }
 }
@@ -88,5 +90,5 @@ void main()
     {
         printf("%d ", a[i]);
     }
-    printf("\ncount=%d",count);
+    printf("\ncount=%d", count);
 }
